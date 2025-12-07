@@ -1,33 +1,30 @@
-// Project: Expense Tracker 
+// Project: Expense Tracker Application
 // Author: Bryit Sumner
 // Date: 2025-12-05
-// Description: This class is responsible for displaying the list of expenses and calculating the remaining balance after expenses.
+// Description: This class calculates the total expenses and the remaining balance based on the user's monthly income and the list of expenses.
 
+package edu.ivytech.expensetracker;
 
 import java.util.List;
 
-public class ExpenseViewer {
+public class ExpenseCalculator {
 
-    // Stores the total monthly income
+    // Stores the monthly income
     private double monthlyIncome;
 
-    // Stores the list of expenses (each expense is a string or object in full version)
-    private List<String> expenses;
-
-    // Stores the total expenses amount
-    private double totalExpenses;
+    // Stores the list of individual expense amounts
+    private List<Double> expenseAmounts;
 
 
     // Default constructor
-    public ExpenseViewer() {
+    public ExpenseCalculator() {
     }
 
 
-    // Constructor that sets income, expenses, and total expenses
-    public ExpenseViewer(double monthlyIncome, List<String> expenses, double totalExpenses) {
+    // Constructor that sets income and the list of expense amounts
+    public ExpenseCalculator(double monthlyIncome, List<Double> expenseAmounts) {
         this.monthlyIncome = monthlyIncome;
-        this.expenses = expenses;
-        this.totalExpenses = totalExpenses;
+        this.expenseAmounts = expenseAmounts;
     }
 
 
@@ -43,39 +40,30 @@ public class ExpenseViewer {
     }
 
 
-    // Gets the list of expenses
-    public List<String> getExpenses() {
-        return expenses;
+    // Gets the list of expense amounts
+    public List<Double> getExpenseAmounts() {
+        return expenseAmounts;
     }
 
 
-    // Sets the list of expenses
-    public void setExpenses(List<String> expenses) {
-        this.expenses = expenses;
+    // Sets the list of expense amounts
+    public void setExpenseAmounts(List<Double> expenseAmounts) {
+        this.expenseAmounts = expenseAmounts;
     }
 
 
-    // Gets the total amount of all expenses
+    // Calculates the total of all expenses
     public double getTotalExpenses() {
-        return totalExpenses;
+        double total = 0;
+        for (double amount : expenseAmounts) {
+            total += amount;
+        }
+        return total;
     }
 
 
-    // Sets the total expenses amount
-    public void setTotalExpenses(double totalExpenses) {
-        this.totalExpenses = totalExpenses;
-    }
-
-
-    // Calculates the remaining balance after subtracting expenses
-    // Returns monthlyIncome - totalExpenses
+    // Calculates the remaining balance after expenses
     public double getRemainingBalance() {
-        return monthlyIncome - totalExpenses;
-    }
-
-
-    // Returns a formatted string of all expenses for display
-    public String viewExpenseList() {
-        return expenses.toString();
+        return monthlyIncome - getTotalExpenses();
     }
 }
