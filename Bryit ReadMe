@@ -1,0 +1,28 @@
+# Expense Tracker Application
+
+# Project Description
+This project is a simple Expense Tracker program designed to help users manage their monthly finances. 
+The application allows the user to set their monthly income, add expense entries, view all expenses, 
+calculate the total expenses, and display the remaining balance. The purpose of the project is to apply 
+object-oriented programming concepts, including class design, constructors, methods, and documentation standards.
+
+## Contributors
+- **Kayla Sturgeon** – IncomeManager class  
+- **Genesis Coria** – ExpenseEntry class  
+- **Harrison Usigbe** – ExpenseList class  
+- **Bryit Sumner** – ExpenseCalculator class  
+
+# Class Distribution
+
+### IncomeManager – *Kayla Sturgeon*  
+Handles setting and updating the user’s monthly income.
+
+### ExpenseEntry – *Genesis Coria*  
+Allows adding new expenses, including expense name and amount.
+
+### ExpenseList – *Harrison Usigbe*  
+Stores all expense entries and allows viewing the list of expenses.
+
+### ExpenseCalculator – *Bryit Sumner*  
+Calculates total expenses and the remaining balance.
+
