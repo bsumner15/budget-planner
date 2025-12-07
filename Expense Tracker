@@ -1,0 +1,81 @@
+// Project: Expense Tracker 
+// Author: Bryit Sumner
+// Date: 2025-12-05
+// Description: This class is responsible for displaying the list of expenses and calculating the remaining balance after expenses.
+
+
+import java.util.List;
+
+public class ExpenseViewer {
+
+    // Stores the total monthly income
+    private double monthlyIncome;
+
+    // Stores the list of expenses (each expense is a string or object in full version)
+    private List<String> expenses;
+
+    // Stores the total expenses amount
+    private double totalExpenses;
+
+
+    // Default constructor
+    public ExpenseViewer() {
+    }
+
+
+    // Constructor that sets income, expenses, and total expenses
+    public ExpenseViewer(double monthlyIncome, List<String> expenses, double totalExpenses) {
+        this.monthlyIncome = monthlyIncome;
+        this.expenses = expenses;
+        this.totalExpenses = totalExpenses;
+    }
+
+
+    // Gets the monthly income
+    public double getMonthlyIncome() {
+        return monthlyIncome;
+    }
+
+
+    // Sets the monthly income
+    public void setMonthlyIncome(double monthlyIncome) {
+        this.monthlyIncome = monthlyIncome;
+    }
+
+
+    // Gets the list of expenses
+    public List<String> getExpenses() {
+        return expenses;
+    }
+
+
+    // Sets the list of expenses
+    public void setExpenses(List<String> expenses) {
+        this.expenses = expenses;
+    }
+
+
+    // Gets the total amount of all expenses
+    public double getTotalExpenses() {
+        return totalExpenses;
+    }
+
+
+    // Sets the total expenses amount
+    public void setTotalExpenses(double totalExpenses) {
+        this.totalExpenses = totalExpenses;
+    }
+
+
+    // Calculates the remaining balance after subtracting expenses
+    // Returns monthlyIncome - totalExpenses
+    public double getRemainingBalance() {
+        return monthlyIncome - totalExpenses;
+    }
+
+
+    // Returns a formatted string of all expenses for display
+    public String viewExpenseList() {
+        return expenses.toString();
+    }
+}
